@@ -23,6 +23,11 @@ export default class LoginPage extends HTMLElement {
         super();
         this.submitButton = null;
         this.onSubmit = this.onSubmit.bind(this);
+
+        this.appendChild(template.content.cloneNode(true));
+
+        this.submitButton = this.querySelector('[type=submit]');
+        this.submitButton.addEventListener('click', this.onSubmit);
     }
 
     static get observedAttributes() {
@@ -30,14 +35,12 @@ export default class LoginPage extends HTMLElement {
     }
 
     connectedCallback() {
-        this.appendChild(template.content.cloneNode(true));
-
-        this.submitButton = this.querySelector('[type=submit]');
-        this.submitButton.addEventListener('click', this.onSubmit);
+        console.log('connected!');
     }
     attributeChangedCallback() {}
     onSubmit(event) {
         event.preventDefault();
+        console.log('on submit!');
     }
     disconnectedCallback() {
         this.submitButton.removeEventListener('click', this.onSubmit);
