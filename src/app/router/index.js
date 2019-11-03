@@ -7,14 +7,16 @@ export default class Router {
 
     init() {
         this.routes.some(route => {
-            let regEx = new RegExp(`^${route.uri}$`); // i'll explain this conversion to regular expression below
             let path = window.location.pathname;
 
-            if (path.match(regEx)) {
+            if (path.startsWith(route.uri)) {
                 // our route logic is true, return the corresponding callback
 
                 let req = {path};
-                return Router.inject(new route.component());
+                const pageInstance = new route.component(req);
+                pageInstance.abc = 'hello world';
+                window.page = pageInstance;
+                return Router.inject(pageInstance);
             }
         });
     }
