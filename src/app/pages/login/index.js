@@ -29,5 +29,11 @@ export default class LoginPage extends HTMLElement {
 
     connectedCallback() {
         this.appendChild(template.content.cloneNode(true));
+
+        const submit = this.querySelector('[type=submit');
+        submit.addEventListener('click', event => {
+            event.preventDefault();
+            alert('Next clicked!');
+        });
     }
 }
