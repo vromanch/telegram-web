@@ -1,6 +1,6 @@
 import Router from './router';
 import {Core} from './core';
-import MTProto from '../../lib/telegram-mtproto/dist/mtproto-browser';
+import MTProto from '../../lib/telegram-mtproto/lib';
 
 const phone = {
     num: '+380679343020',
@@ -14,7 +14,7 @@ const api = {
 };
 
 const server = {
-    dev: false, //We will connect to the test server.
+    dev: true, //We will connect to the test server.
 }; //Any empty configurations fields can just not be specified
 
 const client = MTProto({server, api});
@@ -23,7 +23,7 @@ async function connect() {
     console.log('connect!');
     const {phone_code_hash} = await client('auth.sendCode', {
         phone_number: phone.num,
-        current_number: false,
+        current_number: true,
         api_id: 1060682, // obtain your api_id from telegram
         api_hash: 'a6e8015f6874ca0881956170078e5899', // obtain api_hash from telegram
     });

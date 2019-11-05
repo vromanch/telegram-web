@@ -85,6 +85,7 @@
     "cross-env": "^5.0.5",
     "flow-copy-source": "^1.2.1",
     "fs-extra": "^4.0.2",
+    "hmr-filter-webpack-plugin": "^1.0.0",
     "prompt": "^1.0.0",
     "remote-redux-devtools": "^0.5.12",
     "remotedev-server": "^0.2.4",
