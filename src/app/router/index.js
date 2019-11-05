@@ -14,8 +14,6 @@ export default class Router {
 
                 let req = {path};
                 const pageInstance = new route.component(req);
-                pageInstance.abc = 'hello world';
-                window.page = pageInstance;
                 return Router.inject(pageInstance);
             }
         });
