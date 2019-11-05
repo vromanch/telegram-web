@@ -1,0 +1,7 @@
+image: node:8-alpine
+
+test:
+  script:
+  - npm i
+  - node node_modules/.bin/lerna bootstrap --hoist
+  - npm t
