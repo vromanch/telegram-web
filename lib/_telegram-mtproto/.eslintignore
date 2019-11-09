@@ -1,8 +1,0 @@
-**/lib/**
-**/es/**
-**/dist/**
-**/flow-typed/**
-**/flow/**
-**/node_modules/**
-**/**/*.flow
-**/logs/**

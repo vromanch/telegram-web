@@ -1,5 +1,6 @@
 import Registry from './registry';
 import LoginPage from '../pages/login';
+import SigninPage from '../pages/signin';
 
 export class Core {
     constructor() {
@@ -24,5 +25,9 @@ const components = [
     {
         tagName: 'login-page',
         component: LoginPage,
+    },
+    {
+        tagName: 'signin-page',
+        component: SigninPage,
     },
 ];
