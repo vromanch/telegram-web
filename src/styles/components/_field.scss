@@ -1,0 +1,63 @@
+.field {
+    position: relative;
+    margin-bottom: 1em;
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 15px;
+        padding: 0 17px;
+        height: 54px;
+        border: 1px solid $color-grey-border;
+        border-radius: 10px;
+        background: $color-white;
+
+        &:focus {
+            outline: 0;
+        }
+        &::placeholder {
+            color: transparent;
+        }
+        &:not(:placeholder-shown), input:-webkit-autofill {
+            ~ label {
+                top: -5px;
+                left: 9px;
+                letter-spacing: 0.15px;
+                font-size: 13px;
+                transform: scale(0.9);
+            
+                font-weight: $font-weight-medium;
+                background: $color-white;
+                padding: 0 5px;
+            }
+            &:focus {
+                border-color: $color-primary;
+                border-width: 2px;
+                padding: 0 15px;
+                ~ label {
+                    color: #3a94ed;
+                }
+            }
+            &:not(:focus) {
+                ~ label {
+                    color: $color-grey-dark;
+                    font-weight: $font-weight-small;
+                }
+            }
+        }
+        ~ label {
+            position:absolute;
+            pointer-events:none;
+
+            color: $color-grey-text;
+            font-size:16px;
+            font-weight: $font-weight-small;
+            letter-spacing: .01px;
+            left: 17px;
+            top: 18px;
+        }
+        &:placeholder-shown ~ label {
+            transition:0.2s ease all; 
+        }
+    }
+}
