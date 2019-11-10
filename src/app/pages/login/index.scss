@@ -1,3 +1,5 @@
+@import '../../../styles/abstracts/variables';
+
 .login_page {
     display: flex;
     align-items: center;
@@ -33,5 +35,39 @@
         margin-top: 34px;
         display: flex;
         flex-direction: column;
+
+        phone-number-field {
+            margin-top: 11px;
+        }
+
+        .checkbox {
+            margin-top: 10px;
+            padding: 0 19px;
+            label {
+                margin-left: 38px;
+                font-weight: 300;
+                font-size: 16px;
+                letter-spacing: .1px;
+                line-height: 28px;
+            }
+        }
+
+        [type=submit] {
+            margin-top: 41px;
+            cursor: pointer;
+            height: 54px;
+            background: $color-primary;
+            border-radius: 10px;
+            text-transform: uppercase;
+            border: none;
+            color: #fff;
+            font-size: 15px;
+            &:focus {
+                outline: 0;
+            }
+            &:hover {
+                background-color: $color-primary-hover;
+            }
+        }
     }
 }

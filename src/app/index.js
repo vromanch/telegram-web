@@ -3,8 +3,9 @@ import {Core} from './core';
 
 export default class App {
     constructor() {
-        const router = new Router();
-        new Core();
-        router.init();
+        this.router = new Router();
+        this.core = new Core();
+        
+        this.router.init();
     }
 }
