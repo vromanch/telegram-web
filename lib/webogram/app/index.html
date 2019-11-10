@@ -48,9 +48,9 @@
   <div id="notify_sound"></div>
 
   <!-- build:js js/app.js -->
-  <script type="text/javascript" src="js/lib/polyfill.js"></script>
+  <script type="text/javascript" src="js/lib_isolated/polyfill.js"></script>
   <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="js/lib/config.js"></script>
+  <script type="text/javascript" src="js/lib_isolated/config.js"></script>
   <script type="text/javascript" src="js/init.js"></script>
   <script type="text/javascript" src="js/offline_manager.js"></script>
 
@@ -82,10 +82,21 @@
   <script type="text/javascript" src="vendor/recorderjs/recorder.min.js"></script>
 
   <script type="text/javascript" src="js/lib/utils.js"></script>
-  <script type="text/javascript" src="js/lib/bin_utils.js"></script>
-  <script type="text/javascript" src="js/lib/tl_utils.js"></script>
+  <script type="text/javascript" src="js/lib_isolated/bin_utils.js"></script>
+  <script type="text/javascript" src="js/lib_isolated/tl_utils.js"></script>
   <script type="text/javascript" src="js/lib/ng_utils.js"></script>
-  <script type="text/javascript" src="js/lib/i18n.js"></script>
+  <script type="text/javascript" src="js/lib_isolated/i18n.js"></script>
+
+  <script type="text/javascript" src='js/lib_isolated/MtpApiManager.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpApiFileManager.js'></script>
+  <script type="text/javascript" src='js/lib/MtpSingleInstanceService.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpDcConfigurator.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpRsaKeysManager.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpSecureRandom.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpTimeManager.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpAuthorizer.js'></script>
+  <script type="text/javascript" src='js/lib_isolated/MtpNetworkerFactory.js'></script>
+  
   <script type="text/javascript" src="js/lib/mtproto.js"></script>
   <script type="text/javascript" src="js/lib/mtproto_wrapper.js"></script>
 
