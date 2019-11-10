@@ -4,8 +4,9 @@ import CountryLine from '../country-line';
 
 const template = document.createElement('template');
 template.innerHTML = `
-<div class="country-field">
+<div class="country_field">
     <form-field label="${LABEL}" autocomplete="off"></form-field>
+    <i class="caret"></i>
     <drop-down>
         <ul class="countries">
             ${COUNTRIES.map(({code}) => `
@@ -31,9 +32,9 @@ export default class CountryField extends HTMLElement {
     connectedCallback() {
         this.appendChild(template.content.cloneNode(true));
 
+        this.$wrapper = this.querySelector('.country_field');
         this.$fieldNode = this.querySelector('form-field');
         this.$fieldNode.addEventListener('click', this.open);
-        console.log('country current name ?', this.getAttribute('name'));
         this.$fieldNode.setAttribute('name', this.getAttribute('name'));
         this.$dropDown = this.querySelector('drop-down');
         
@@ -53,13 +54,17 @@ export default class CountryField extends HTMLElement {
 
             if (code) {
                 this.$fieldNode.value = country[0].name
+                this.setAttribute('code', code);
+                this.dispatchEvent(new Event('change', {bubbles: true}));
             }
         }
+
         this.close();
     }
 
-    close() {
+    close(code) {
         this.$dropDown.open = false;
+        this.$wrapper.classList.remove('open');
     }
 
     disconnectedCallback() {
@@ -69,6 +74,13 @@ export default class CountryField extends HTMLElement {
 
     open(event) {
         event.stopPropagation();
+
         this.$dropDown.open = true;
+        this.$wrapper.classList.add('open');
+
+        // fix caret click without no focus
+        if (!this.$fieldNode.focused) {
+            this.$fieldNode.focus();
+        }
     }
 }

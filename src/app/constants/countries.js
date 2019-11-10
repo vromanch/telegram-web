@@ -4,4 +4,12 @@ export const COUNTRIES = [
     {code: 'US', prefix: '+1', name: 'United States'},
     {code: 'FR', prefix: '+33', name: 'France'},
     {code: 'IT', prefix: '+39', name: 'Italy'},
-]
+];
+
+export const FLAG = {
+    UA: '🇺🇦',
+    UK: '🇬🇧',
+    US: '🇺🇸',
+    FR: '🇫🇷',
+    IT: '🇮🇹',
+}

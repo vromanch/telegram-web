@@ -1,4 +1,4 @@
-import {COUNTRIES} from '../../constants/countries';
+import {COUNTRIES, FLAG} from '../../constants/countries';
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -35,7 +35,7 @@ export default class CountryLine extends HTMLElement {
         if (code) {
             const country = COUNTRIES.find(country => country.code === code);
 
-            this.flagNode.classList.add(`flag_${code}`.toLowerCase());
+            this.flagNode.innerText = FLAG[code];
             this.nameNode.innerText = country.name;
             this.prefixNode.innerText = country.prefix;
         }

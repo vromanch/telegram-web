@@ -2,7 +2,7 @@
 $color-black: #000000;
 $color-white: #ffffff;
 $color-grey-bg: #f4f4f5;
-$color-grey-numbers: #d7d7d7;
+$color-grey-numbers: #707579;
 $color-grey-text: #999;
 $color-grey-border: #d9dce0;
 $color-grey-dark: #666666;
@@ -10,7 +10,7 @@ $color-red: #eb3324;
 $color-yellow: #fad84a;
 
 // CUSTOM
-$color-primary: #4ea3f6;
+$color-primary: #4ea4f6;
 $color-primary-light: #83b9ff;
 $color-primary-dark: #005ecb;
 $color-secondary: #ff5252;
@@ -29,15 +29,12 @@ $font-family-primary: 'Lato';
 $font-family-secondary: 'Anton';
 $default-font-size: 1.6rem;
 
+//
+$font-size-emoji: 26px;
+$font-size-medium: 15px;
+$font-size-medium-plus: 16px;
+
 // FONT SIZES
 $font-weight-small: 300;
 $font-weight-medium: 400;
 
-// custom Font usage example:
-// @font-face {
-//   font-family: $font-demo;
-//   // these assets are relative to main.scss
-//   src: url('../assets/fonts/karla.ttf') format('ttf');
-//   font-weight: 600;
-//   font-style: normal;
-// }

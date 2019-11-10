@@ -1,10 +1,33 @@
-.country-field {
+@import '../../../styles/abstracts/variables';
+
+.country_field {
     position: relative;
     z-index: 10;
+    cursor: pointer;
     
     .countries {
-        padding: 0;
         margin: 0;
+        padding: 10px 0;
+    }
+
+    form-field input {
+        cursor: pointer;
+    }
+    form-field:after {
+        content: "";
+        position: absolute;
+        right: 14px;
+        top: 14px;
+        width: 25px;
+        height: 25px;
+        background-color: #ccc;
+        mask-image: url(../../../assets/icons/down_svg.svg);
+        background-repeat: no-repeat;
+    }
+
+    &.open form-field:after {
+        transform: rotate(180deg);
+        background-color: $color-primary;
     }
 
     drop-down {
@@ -14,6 +37,6 @@
         left: 0;
         top: 62px;
         background-color: #fff;
-        max-height: 376px;
+        max-height: 366px;
     }
 }

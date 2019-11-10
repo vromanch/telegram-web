@@ -15,6 +15,9 @@
         // hide default blinking cursor
         &:focus {
             outline: 0;
+            border-color: $color-primary;
+            border-width: 2px;
+            padding: 0 15px;
         }
         &::placeholder {
             color: transparent;
@@ -31,13 +34,8 @@
                 background: $color-white;
                 padding: 0 5px;
             }
-            &:focus {
-                border-color: $color-primary;
-                border-width: 2px;
-                padding: 0 15px;
-                ~ label {
-                    color: #3a94ed;
-                }
+            &:focus ~ label {
+                color: #3a94ed;
             }
             &:not(:focus) {
                 ~ label {

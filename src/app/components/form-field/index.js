@@ -41,6 +41,14 @@ export default class FormField extends HTMLElement {
         this.labelNode.innerText = newLabel;
     }
 
+    get focused() {
+        return document.activeElement === this.inputNode;
+    }
+
+    focus() {
+        this.inputNode.focus();
+    }
+
     connectedCallback () {
         this.inputNode.addEventListener('change', this.validate);
 

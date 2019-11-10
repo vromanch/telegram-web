@@ -5,7 +5,7 @@ template.innerHTML = `
         display: none;
     }
     .content {
-        box-shadow: 0 0 4px -2px rgba(0,0,0,0.75);
+        box-shadow: 0px 7px 13px -4px rgba(0, 0, 0, 0.46);
         border-radius: 10px;
     }
 </style>
@@ -15,8 +15,6 @@ template.innerHTML = `
     </div>
 </div>
 `;
-
-import './index.scss';
 
 export default class DropDown extends HTMLElement {
     constructor() {
@@ -57,7 +55,6 @@ export default class DropDown extends HTMLElement {
         switch (name) {
             case 'open':
                 if (isOpen) {
-                    console.log('open !??', open)
                     this.dropDown.style.display = 'block';
                 } else {
                     this.dropDown.style.display = 'none';

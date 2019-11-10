@@ -1,3 +1,5 @@
+import {COUNTRIES} from '../../constants/countries';
+
 const template = document.createElement('template');
 template.innerHTML = `
 <div class="login_page">
@@ -17,14 +19,15 @@ export default class LoginPage extends HTMLElement {
     constructor() {
         super();
         this.submitButton = null;
+        this.onCountrySelected = this.onCountrySelected.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.appendChild(template.content.cloneNode(true));
 
         this.form = this.querySelector('form');
-        this.form.addEventListener('change', event => {
-            console.log('form change!', event);
-        });
+        this.form.addEventListener('change', this.onCountrySelected); 
+        this.$phoneField = this.querySelector('form-field[name="phone"]');
+
         // this.submitButton = this.querySelector('[type=submit]');
         // this.submitButton.addEventListener('click', this.onSubmit);
     }
@@ -33,13 +36,26 @@ export default class LoginPage extends HTMLElement {
         return [];
     }
 
+    onCountrySelected(event) {
+        const inputName = event.target.getAttribute('name');
+        if (inputName === 'country') {
+            const code = event.target.getAttribute('code');
+            const country = COUNTRIES.find(country => country.code === code);
+            
+            this.updatePhonePrefix(country.prefix);
+            this.$phoneField.focus();
+        }
+    }
+
+    updatePhonePrefix(prefix) {
+        this.$phoneField.value = prefix;
+    }
+
     connectedCallback() {
-        console.log('connected!');
     }
     attributeChangedCallback() {}
     onSubmit(event) {
         event.preventDefault();
-        console.log('on submit!');
     }
     disconnectedCallback() {
         // this.submitButton.removeEventListener('click', this.onSubmit);
