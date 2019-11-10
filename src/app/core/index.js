@@ -1,6 +1,14 @@
 import Registry from './registry';
 import LoginPage from '../pages/login';
 import SigninPage from '../pages/signin';
+import CodePage from '../pages/code';
+
+import FormField from '../components/form-field';
+import CountryField from '../components/country-field';
+import PhoneNumberField from '../components/phone-number-field';
+import DropDown from '../components/drop-down';
+import CountryLine from '../components/country-line';
+
 
 export class Core {
     constructor() {
@@ -30,4 +38,27 @@ const components = [
         tagName: 'signin-page',
         component: SigninPage,
     },
+        tagName: 'code-page',
+        component: CodePage,
+    },
+    {
+        tagName: 'form-field',
+        component: FormField,
+    },
+    {
+        tagName: 'country-field',
+        component: CountryField,
+    },
+    {
+        tagName: 'phone-number-field',
+        component: PhoneNumberField,
+    },
+    {
+        tagName: 'drop-down',
+        component: DropDown,
+    },
+    {
+        tagName: 'country-line',
+        component: CountryLine,
+    }
 ];
