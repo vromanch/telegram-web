@@ -8,12 +8,13 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
-        main: ['./src/index.js', './src/styles/main.scss'],
+        main: ['@babel/polyfill', './src/index.js', './src/styles/main.scss'],
     },
     output: {
         filename: '[name].[hash].js',
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/',
+        globalObject: 'this',
     },
     module: {
         rules: [
@@ -65,4 +66,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],
+    node: {
+        fs: 'empty'
+    }
 };

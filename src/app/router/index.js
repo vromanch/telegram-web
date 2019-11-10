@@ -1,8 +1,10 @@
 import Login from '../pages/login';
+import Signin from '../pages/signin';
 
 export default class Router {
     constructor() {
-        this.routes = [{uri: '/login', component: Login}];
+        this.routes = [{uri: '/login', component: Login},
+                       {uri: '/signin', component: Signin}];
     }
 
     init() {
