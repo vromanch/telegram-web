@@ -3,6 +3,8 @@ import LoginPage from '../pages/login';
 
 import FormField from '../components/form-field';
 import CountryField from '../components/country-field';
+import DropDown from '../components/drop-down';
+import CountryLine from '../components/country-line';
 
 export class Core {
     constructor() {
@@ -23,8 +25,6 @@ export class Core {
 }
 Core.inst = null;
 
-console.log('field? ', CountryField);
-
 const components = [
     {
         tagName: 'login-page',
@@ -37,5 +37,13 @@ const components = [
     {
         tagName: 'country-field',
         component: CountryField,
+    },
+    {
+        tagName: 'drop-down',
+        component: DropDown,
+    },
+    {
+        tagName: 'country-line',
+        component: CountryLine,
     }
 ];

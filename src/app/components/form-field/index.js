@@ -6,8 +6,6 @@ template.innerHTML = `
 </div>
 `;
 
-import './index.scss';
-
 export default class FormField extends HTMLElement {
     constructor() {
         super();
@@ -50,6 +48,12 @@ export default class FormField extends HTMLElement {
         let label = this.getAttribute('label');
         this.labelNode.innerText = label;
         this.inputNode.placeholder = label;
+
+        // disable autocomplete
+        const autocomplete = this.getAttribute('autocomplete');
+        if (autocomplete) {
+            this.inputNode.setAttribute('autocomplete', autocomplete);
+        }
     }
 
     disconnectedCallback () {
@@ -57,7 +61,7 @@ export default class FormField extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['label', 'value'];
+        return ['label', 'value', 'name'];
     }
 
     attributeChangedCallback (name, oldValue, newValue) {
@@ -67,6 +71,9 @@ export default class FormField extends HTMLElement {
                 break;
             case 'label':
                 this.labelNode.value = newValue;
+                break;
+            case 'name':
+                this.inputNode.setAttribute('name', newValue);
                 break;
         }
     }

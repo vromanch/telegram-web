@@ -6,12 +6,13 @@
         width: 100%;
         box-sizing: border-box;
         font-size: 15px;
-        padding: 0 17px;
+        padding: 0 16px;
         height: 54px;
         border: 1px solid $color-grey-border;
         border-radius: 10px;
         background: $color-white;
-
+        
+        // hide default blinking cursor
         &:focus {
             outline: 0;
         }

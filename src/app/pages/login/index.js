@@ -4,8 +4,9 @@ template.innerHTML = `
     <span class="logo"></span>
     <h1>Sign in to Telegram</h1>
     <p class="sub-type">Please confirm your country and enter your phone number.</p>
-    <form>
+    <form autocomplete="off">
         <country-field name="country" label="Country"></country-field>
+        <form-field name="phone" label="Phone Number"></form-field>
     </form>
 </div>
 `;
@@ -20,6 +21,10 @@ export default class LoginPage extends HTMLElement {
 
         this.appendChild(template.content.cloneNode(true));
 
+        this.form = this.querySelector('form');
+        this.form.addEventListener('change', event => {
+            console.log('form change!', event);
+        });
         // this.submitButton = this.querySelector('[type=submit]');
         // this.submitButton.addEventListener('click', this.onSubmit);
     }

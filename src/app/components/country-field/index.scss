@@ -1,0 +1,19 @@
+.country-field {
+    position: relative;
+    z-index: 10;
+    
+    .countries {
+        padding: 0;
+        margin: 0;
+    }
+
+    drop-down {
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 62px;
+        background-color: #fff;
+        max-height: 376px;
+    }
+}
