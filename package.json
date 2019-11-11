@@ -39,7 +39,6 @@
     "semi": true
   },
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
     "imask": "^5.2.1",
     "normalize-scss": "^7.0.1"
   }

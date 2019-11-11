@@ -1,6 +1,6 @@
 import Router from './router';
 import { Core } from './core';
-import { Telegram } from './telegram';
+// import { Telegram } from './telegram';
 
 export default class App {
     constructor() {

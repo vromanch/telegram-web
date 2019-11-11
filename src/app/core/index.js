@@ -38,6 +38,7 @@ const components = [
         tagName: 'signin-page',
         component: SigninPage,
     },
+    {
         tagName: 'code-page',
         component: CodePage,
     },
