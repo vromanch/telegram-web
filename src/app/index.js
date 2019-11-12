@@ -4,9 +4,9 @@ import { Telegram } from './telegram';
 
 export default class App {
     constructor() {
-        const router = new Router();
-        new Core();
-        new Telegram();
-        router.init();
+        this.router = new Router();
+        this.core = new Core();
+        // new Telegram();
+        this.router.init();
     }
 }
