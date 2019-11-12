@@ -86,3 +86,5 @@ export default class FormField extends HTMLElement {
         }
     }
 }
+
+window.customElements.define('form-field', FormField);

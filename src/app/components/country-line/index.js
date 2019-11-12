@@ -41,3 +41,5 @@ export default class CountryLine extends HTMLElement {
         }
     }
 }
+
+window.customElements.define('country-line', CountryLine);

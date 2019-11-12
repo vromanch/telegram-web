@@ -1,6 +1,9 @@
 import {COUNTRIES} from '../../constants/countries';
 import {LABEL} from './constants';
+
+import '../drop-down';
 import CountryLine from '../country-line';
+
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -84,3 +87,5 @@ export default class CountryField extends HTMLElement {
         }
     }
 }
+
+window.customElements.define('country-field', CountryField);

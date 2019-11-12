@@ -63,3 +63,5 @@ export default class DropDown extends HTMLElement {
         }
     }
 }
+
+window.customElements.define('drop-down', DropDown);

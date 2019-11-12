@@ -82,3 +82,5 @@ export default class PhoneNumberField extends FormField {
     //     return Math.floor(position / (interval + 1));
     // }
 }
+
+window.customElements.define('phone-number-field', PhoneNumberField);
