@@ -21,8 +21,6 @@ template.innerHTML = `
     </div>
 `;
 
-import './login-form.scss';
-
 export default class LoginForm extends HTMLElement {
     
     constructor() {
@@ -36,11 +34,12 @@ export default class LoginForm extends HTMLElement {
 
         this.form = this.querySelector('form');
         this.form.addEventListener('change', this.onCountrySelected); 
+        this.form.addEventListener('submit', this.onSubmit);
+
         this.$phoneField = this.querySelector('[name="phone"]');
         this.$phoneField.addEventListener('input', this.onPhoneChanged);
 
         this.submitButton = this.querySelector('[type=submit]');
-        this.submitButton.addEventListener('click', this.onSubmit);
         this.submitButton.style.display = 'none';
 
         this._data = {
@@ -78,9 +77,11 @@ export default class LoginForm extends HTMLElement {
     }
 
     onSubmit(event) {
-        event.preventDefault();
-        
-        window.location.pathname = '/code';
+        const {phone} = this._data;
+
+        event.data = {
+            phoneNumber: phone,
+        };
     }
 }
 
