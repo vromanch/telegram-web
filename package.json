@@ -37,7 +37,9 @@
     "semi": true
   },
   "dependencies": {
+    "@lottiefiles/lottie-player": "^0.3.0-rc2",
     "imask": "^5.2.1",
+    "lottie-web": "^5.5.9",
     "normalize-scss": "^7.0.1"
   }
 }
