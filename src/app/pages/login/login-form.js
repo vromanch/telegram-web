@@ -77,6 +77,7 @@ export default class LoginForm extends HTMLElement {
     }
 
     onSubmit(event) {
+        event.preventDefault();
         const {phone} = this._data;
 
         event.data = {
